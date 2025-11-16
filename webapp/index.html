@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Assessment Platform</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -13,6 +18,7 @@
             padding: 20px;
             line-height: 1.6;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -21,37 +27,46 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
+
         header {
             background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
             color: white;
             padding: 32px 30px;
             text-align: center;
         }
+
         h1 { 
             font-size: 2.2em; 
             margin-bottom: 8px;
             font-weight: 600;
             letter-spacing: -0.5px;
         }
+
         .subtitle {
             font-size: 1em;
             opacity: 0.85;
             font-weight: 400;
         }
+
         .screen { 
             display: none; 
             padding: 40px;
             animation: fadeIn 0.4s ease;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .screen.active { display: block; }
-        
+
+        .screen.active { 
+            display: block; 
+        }
+
         .form-group {
             margin: 24px 0;
         }
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -59,6 +74,7 @@
             color: #2d3748;
             font-size: 0.95em;
         }
+
         input, select {
             width: 100%;
             padding: 14px 16px;
@@ -69,11 +85,13 @@
             background: #fff;
             font-family: inherit;
         }
+
         input:focus, select:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
+
         .btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -87,13 +105,16 @@
             width: 100%;
             font-family: inherit;
         }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
+
         .btn:active {
             transform: translateY(0);
         }
+
         .quiz-header {
             background: #f7fafc;
             padding: 20px 24px;
@@ -103,16 +124,19 @@
             border-bottom: 2px solid #e2e8f0;
             margin: -40px -40px 30px -40px;
         }
+
         .timer {
             font-size: 24px;
             font-weight: 700;
             color: #667eea;
         }
+
         .question-counter, .score {
             font-size: 15px;
             font-weight: 500;
             color: #4a5568;
         }
+
         .question-text {
             font-size: 20px;
             margin: 30px 0;
@@ -120,11 +144,13 @@
             line-height: 1.6;
             font-weight: 500;
         }
+
         .options-container {
             display: grid;
             gap: 12px;
             margin: 30px 0;
         }
+
         .option {
             padding: 18px 20px;
             border: 2px solid #e2e8f0;
@@ -134,15 +160,18 @@
             background: #fff;
             font-size: 15px;
         }
+
         .option:hover {
             border-color: #667eea;
             background: #f7fafc;
         }
+
         .option.selected {
             border-color: #667eea;
             background: #667eea;
             color: white;
         }
+
         .question-navigation {
             display: flex;
             flex-wrap: wrap;
@@ -150,6 +179,7 @@
             margin: 24px 0;
             justify-content: center;
         }
+
         .nav-btn {
             padding: 10px 16px;
             border: 2px solid #e2e8f0;
@@ -162,30 +192,36 @@
             min-width: 45px;
             font-family: inherit;
         }
+
         .nav-btn:hover {
             border-color: #667eea;
             background: #f7fafc;
         }
+
         .nav-btn.current {
             background: #667eea;
             color: white;
             border-color: #667eea;
         }
+
         .nav-btn.answered {
             background: #48bb78;
             color: white;
             border-color: #48bb78;
         }
+
         .quiz-footer {
             display: flex;
             gap: 12px;
             justify-content: center;
             margin-top: 30px;
         }
+
         .quiz-footer .nav-btn {
             width: auto;
             min-width: 120px;
         }
+
         .results-summary {
             text-align: center;
             padding: 40px;
@@ -193,40 +229,56 @@
             border-radius: 12px;
             margin: 24px 0;
         }
+
         .score-display {
             font-size: 4em;
             font-weight: 700;
             color: #667eea;
             margin: 20px 0;
         }
+
         .score-message {
             font-size: 1.2em;
             color: #4a5568;
             margin-bottom: 16px;
         }
+
         .stats {
             display: flex;
             justify-content: space-around;
             margin-top: 32px;
             gap: 20px;
         }
+
         .stat-item {
             text-align: center;
             padding: 16px;
         }
+
         .stat-value {
             font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 8px;
         }
-        .stat-value.correct { color: #48bb78; }
-        .stat-value.wrong { color: #f56565; }
-        .stat-value.time { color: #ed8936; }
+
+        .stat-value.correct { 
+            color: #48bb78; 
+        }
+
+        .stat-value.wrong { 
+            color: #f56565; 
+        }
+
+        .stat-value.time { 
+            color: #ed8936; 
+        }
+
         .stat-label {
             color: #718096;
             font-size: 0.9em;
             font-weight: 500;
         }
+
         .result-item {
             padding: 20px;
             margin: 12px 0;
@@ -234,32 +286,39 @@
             border-left: 4px solid #e2e8f0;
             background: #f7fafc;
         }
+
         .result-item.correct {
             border-left-color: #48bb78;
             background: #f0fff4;
         }
+
         .result-item.incorrect {
             border-left-color: #f56565;
             background: #fff5f5;
         }
+
         .result-question {
             font-weight: 600;
             color: #2d3748;
             margin-bottom: 8px;
         }
+
         .result-answer {
             font-size: 0.9em;
             color: #4a5568;
         }
-        .hidden { display: none !important; }
-        
+
+        .hidden { 
+            display: none !important; 
+        }
+
         .welcome-text {
             color: #4a5568;
             text-align: center;
             margin-bottom: 30px;
             font-size: 1.05em;
         }
-        
+
         .section-title {
             color: #2d3748;
             margin: 30px 0 20px 0;
@@ -267,7 +326,7 @@
             font-size: 1.5em;
             font-weight: 600;
         }
-        
+
         @media (max-width: 640px) {
             .stats {
                 flex-direction: column;
@@ -382,6 +441,16 @@
     </div>
 
     <script>
+        // ChromeDriver automation detection fix
+        Object.defineProperty(navigator, 'webdriver', {
+            get: () => undefined
+        });
+
+        // Additional anti-detection measures
+        window.navigator.chrome = {
+            runtime: {}
+        };
+
         // Quiz data structure
         const quizData = {
             programming: {
